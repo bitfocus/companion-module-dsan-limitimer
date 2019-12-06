@@ -1,0 +1,19 @@
+{
+	"name": "dsan-limitimer",
+	"version": "1.1.1",
+	"api_version": "1.0.0",
+	"keywords": [
+		"Software",
+		"Timing"
+	],
+	"manufacturer": "Dsan",
+	"product": "Limitimer",
+	"shortname": "Limitimer",
+	"description": "Module to control Dsan Limitimer via Global Cashe TP2SL",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Per Røine <per.roine@gmail.com>",
+	"license": "MIT"
+}
