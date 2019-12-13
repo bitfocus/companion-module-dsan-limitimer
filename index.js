@@ -57,7 +57,7 @@ class instance extends instance_skel {
 				id: 'info',
 				width: 12,
 				label: 'Information',
-				value: 'This module controls Dsan Limitimer by <a href="http://dsan.com" target="_new">Dsan</a>.'
+				value: 'This module controls Dsan Limitimer by <a href="http://dsan.com" target="_new">Dsan</a>. Via the GlobalCache TP2SL and the Dsan TP-2000X'
 			},
 			{
 				type: 'textinput',
@@ -69,7 +69,8 @@ class instance extends instance_skel {
 			{	type: 'textinput',
 				id:   'port',
 				label:'Target port',
-				width: 6
+				width: 6,
+				default: 4999
 			},
 			{
 				type: 'text',
