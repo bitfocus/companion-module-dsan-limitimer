@@ -272,6 +272,51 @@ module.exports = {
 				}
 				
 			},
+			feedbacks['Seconds'] = {
+				label: 'Change color when Seconds is active',
+				description: 'Change the colors of a bank according Seconds is active',
+				options: [
+					{
+						type: 'colorpicker',
+						label: 'Foreground color',
+						id: 'Seconds_on_fg',
+						default: this.rgb(255,255,255)
+					},
+					{
+						type: 'colorpicker',
+						label: 'Background color',
+						id: 'Seconds_on_bg',
+						default: this.rgb(255,0,0)
+					},
+					{
+						type: 'colorpicker',
+						label: 'Foreground color',
+						id: 'Seconds_off_fg',
+						default: this.rgb(255,255,255)
+					},
+					{
+						type: 'colorpicker',
+						label: 'Background color',
+						id: 'SSeconds_off_bg',
+						default: this.rgb(0,0,0)
+					}
+				],
+				callback: (feedback, bank) => {
+					if (this.feedbackstate.Seconds == 'On') {
+						return {
+							color: feedback.options.Seconds_on_fg,
+							bgcolor: feedback.options.Seconds_on_bg
+						};
+					}
+					else if (this.feedbackstate.Seconds == 'Off') {
+						return {
+							color: feedback.options.Seconds_off_fg,
+							bgcolor: feedback.options.Seconds_off_bg
+						}
+					}
+				}
+				
+			},
 			feedbacks['Beep'] = {
 				label: 'Change color when Beep is active',
 				description: 'Change the colors of a bank according P1 is active',

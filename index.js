@@ -203,6 +203,8 @@ class instance extends instance_skel {
 
 		this.initPresets();
 		this.init_tcp();
+		this.initVariables();
+		this.initFeedbacks();
 	}
 	/**
 	 * INTERNAL: use setup data to initalize the tcp socket object.
@@ -265,8 +267,6 @@ class instance extends instance_skel {
 				if (info.length == 3) {
 					
 					if (info[0] == 'RTSTR') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.time = info[1];
 						this.updateTime();
 						this.updateState();
@@ -275,24 +275,18 @@ class instance extends instance_skel {
 				if (info.length == 2) {
 
 					if (info[0] == 'GRNLEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.state = 'Running';
 						this.updateState();
 						this.checkFeedbacks('state_color');
 					}
 
 					if (info[0] == 'YELLEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.state = 'Sum-up';
 						this.updateState();
 						this.checkFeedbacks('state_color');
 					}
 
 					if (info[0] == 'REDLEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.state = 'Overtime';
 						this.updateState();
 						this.checkFeedbacks('state_color');
@@ -300,106 +294,95 @@ class instance extends instance_skel {
 						
 					if (info[0] == 'REDLEDOF' && 'YELLEDOF' && 'GRNLEDOF'){
 						this.feedbackstate.state = 'Stopped';
-						this.initVariables();
-						this.initFeedbacks();
 						this.updateState();
 						this.checkFeedbacks('state_color');
 					}
 
 					if (info[0] == 'P1LEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.P1 = 'On';
 						this.updateP1();
 						this.checkFeedbacks('P1');
 					}
 
 					if (info[0] == 'P1LEDOF') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.P1 = 'Off';
 						this.updateP1();
 						this.checkFeedbacks('P1');					
 					}
 
 					if (info[0] == 'P2LEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.P2 = 'On';
 						this.updateP2();
 						this.checkFeedbacks('P2');
 					}
 
 					if (info[0] == 'P2LEDOF') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.P2 = 'Off';
 						this.updateP2();
 						this.checkFeedbacks('P2');					
 					}
 
 					if (info[0] == 'P3LEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.P3 = 'On';
 						this.updateP3();
 						this.checkFeedbacks('P3');
 					}
 
 					if (info[0] == 'P3LEDOF') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.P3 = 'Off';
 						this.updateP3();
 						this.checkFeedbacks('P3');					
 					}
 
 					if (info[0] == 'SESLEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.Session = 'On';
 						this.updateSession();
 						this.checkFeedbacks('Session');
 					}
 
 					if (info[0] == 'SESLEDOF') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.Session = 'Off';
 						this.updateSession();
 						this.checkFeedbacks('Session');					
 					}
 
 					if (info[0] == 'BPLEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.Beep = 'On';
 						this.updateBeep();
 						this.checkFeedbacks('Beep');
 					}
 
 					if (info[0] == 'BPLEDOF') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.Beep = 'Off';
 						this.updateBeep();
 						this.checkFeedbacks('Beep');					
 					}
 
 					if (info[0] == 'BKLEDON') {
-						this.initVariables();
-						this.initFeedbacks();
 						this.feedbackstate.Blink = 'On';
 						this.updateBlink();
 						this.checkFeedbacks('Blink');
 					}
 
 					if (info[0] == 'BKLEDOF') {
-						this.initVariables();
-						this.initFeedbacks();
+
 						this.feedbackstate.Blink = 'Off';
 						this.updateBlink();
 						this.checkFeedbacks('Blink');					
+					}
+
+					if (info[0] == 'SMON') {
+
+						this.feedbackstate.Seconds = 'On';
+						this.updateSeconds();
+						this.checkFeedbacks('Seconds');					
+					}
+
+					if (info[0] == 'SMOF') {
+
+						this.feedbackstate.Seconds = 'Off';
+						this.updateSeconds();
+						this.checkFeedbacks('Seconds');					
 					}
 
 					
@@ -459,6 +442,8 @@ class instance extends instance_skel {
 
 		this.config = config;
 		this.initPresets();
+		this.initVariables();
+		this.initFeedbacks();
 		if (resetConnection === true || this.socket === undefined) {
 			this.init_tcp();
 		}
@@ -559,6 +544,10 @@ class instance extends instance_skel {
 
 	updateBlink() {	
 		this.setVariable('Blink', this.feedbackstate.Blink);
+	}
+
+	updateSeconds() {	
+		this.setVariable('Seconds', this.feedbackstate.Seconds);
 	}
 
 
