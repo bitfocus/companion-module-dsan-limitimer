@@ -147,7 +147,7 @@ module.exports = {
 					text: 'Blink',
 					size: '18',
 					color: this.rgb(255,255,255),
-					bgcolor: this.rgb(0,0,255)
+					bgcolor: this.rgb(0,0,0)
 				},
 				actions: [
 					{
@@ -158,10 +158,10 @@ module.exports = {
 					{
 						type: 'Blink',
 						options: {
-							P1_on_bg: this.rgb(255,0,0),
-							P1_on_fg: this.rgb(255,255,255),
-							P1_off_bg: this.rgb(0,0,0),
-							P1_off_fg: this.rgb(255,255,255),
+							Blink_on_bg: this.rgb(255,0,0),
+							Blink_on_fg: this.rgb(255,255,255),
+							Blink_off_bg: this.rgb(0,0,0),
+							Blink_off_fg: this.rgb(255,255,255),
 						}
 					}
 				]
@@ -175,7 +175,7 @@ module.exports = {
 					text: 'Beep',
 					size: '18',
 					color: this.rgb(255,255,255),
-					bgcolor: this.rgb(0,0,255)
+					bgcolor: this.rgb(0,0,0)
 				},
 				actions: [
 					{
@@ -186,10 +186,10 @@ module.exports = {
 					{
 						type: 'Beep',
 						options: {
-							P1_on_bg: this.rgb(255,0,0),
-							P1_on_fg: this.rgb(255,255,255),
-							P1_off_bg: this.rgb(0,0,0),
-							P1_off_fg: this.rgb(255,255,255),
+							Beep_on_bg: this.rgb(255,0,0),
+							Beep_on_fg: this.rgb(255,255,255),
+							Beep_off_bg: this.rgb(0,0,0),
+							Beep_off_fg: this.rgb(255,255,255),
 						}
 					}
 				]
@@ -237,7 +237,7 @@ module.exports = {
 					text: 'PGM 1',
 					size: '18',
 					color: '16777215',
-					bgcolor: this.rgb(0,0,255)
+					bgcolor: this.rgb(0,0,0)
 				},
 				actions: [
 					{
@@ -268,7 +268,7 @@ module.exports = {
 					text: 'PGM 2',
 					size: '18',
 					color: '16777215',
-					bgcolor: this.rgb(0,0,255)
+					bgcolor: this.rgb(0,0,0)
 				},
 				actions: [
 					{
@@ -282,10 +282,10 @@ module.exports = {
 					{
 						type: 'P2',
 						options: {
-							P1_on_bg: this.rgb(255,0,0),
-							P1_on_fg: this.rgb(255,255,255),
-							P1_off_bg: this.rgb(0,0,0),
-							P1_off_fg: this.rgb(255,255,255),
+							P2_on_bg: this.rgb(255,0,0),
+							P2_on_fg: this.rgb(255,255,255),
+							P2_off_bg: this.rgb(0,0,0),
+							P2_off_fg: this.rgb(255,255,255),
 						}
 					}
 				]
@@ -299,7 +299,7 @@ module.exports = {
 					text: 'PGM 3',
 					size: '18',
 					color: '16777215',
-					bgcolor: this.rgb(0,0,255)
+					bgcolor: this.rgb(0,0,0)
 				},
 				actions: [
 					{
@@ -313,10 +313,10 @@ module.exports = {
 					{
 						type: 'P3',
 						options: {
-							P1_on_bg: this.rgb(255,0,0),
-							P1_on_fg: this.rgb(255,255,255),
-							P1_off_bg: this.rgb(0,0,0),
-							P1_off_fg: this.rgb(255,255,255),
+							P3_on_bg: this.rgb(255,0,0),
+							P3_on_fg: this.rgb(255,255,255),
+							P3_off_bg: this.rgb(0,0,0),
+							P3_off_fg: this.rgb(255,255,255),
 						}
 					}
 				]
@@ -330,7 +330,7 @@ module.exports = {
 					text: 'Session',
 					size: '18',
 					color: '16777215',
-					bgcolor: this.rgb(0,0,255)
+					bgcolor: this.rgb(0,0,0)
 				},
 				actions: [
 					{
@@ -344,10 +344,10 @@ module.exports = {
 					{
 						type: 'Session',
 						options: {
-							P1_on_bg: this.rgb(255,0,0),
-							P1_on_fg: this.rgb(255,255,255),
-							P1_off_bg: this.rgb(0,0,0),
-							P1_off_fg: this.rgb(255,255,255),
+							Session_on_bg: this.rgb(255,0,0),
+							Session_on_fg: this.rgb(255,255,255),
+							Session_off_bg: this.rgb(0,0,0),
+							Session_off_fg: this.rgb(255,255,255),
 						}
 					}
 				]
