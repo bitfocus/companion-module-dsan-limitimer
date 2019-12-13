@@ -264,7 +264,7 @@ class instance extends instance_skel {
 				if (info[0].substr(0,1) === '>') {
 					info[0] = info[0].substr(1,info[0].length);
 				}
-				console.log('INFO ',info)
+				// console.log('INFO ',info)
 				if (info.length == 3) {
 					
 					if (info[0] == 'RTSTR') {
